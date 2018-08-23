@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Node Js Web API Help Page</title>
+
+</head>
+
+<body>
+
+  <link rel='stylesheet' href='HelpPage.css' type='text/css' media='all' />
+  <header class="help-page">
+    <div class="content-wrapper">
+      <div class="float-left">
+        <h1>Node Js Web API Help Page</h1>
+      </div>
+    </div>
+  </header>
+  <div id="body" class="help-page">
+    <section class="featured">
+      <div class="content-wrapper">
+        <h2>Introduction</h2>
+        <p>
+          Provide a general description of your APIs here.
+        </p>
+      </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+      <h2 id="AppUser">AppUser</h2>
+      <table class="help-page-table">
+        <thead>
+          <tr>
+            <th>API</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/users/paging?page={page}&amp;pageSize={pageSize}&amp;filter={filter}&amp;role_code={role_code}&amp;status={status}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/users/detail/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">POST api/v1/users/signup</a>
+            </td>
+            <td class="api-documentation">
+              <p>Require: Body(email,password,fullname,username,phone).</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">POST api/v1/users/login</a>
+            </td>
+            <td class="api-documentation">
+              <p>Require: Body(username, password).</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">PATCH api/v1/users/changepassword</a>
+            </td>
+            <td class="api-documentation">
+              <p>Required: Header: (Authorization) , Body(username,oldpassword,newpassword).</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">DELETE api/v1/users/delete/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+      <h2 id="AppCustomer">AppCustomer</h2>
+      <table class="help-page-table">
+        <thead>
+          <tr>
+            <th>API</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/customers</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/customers/paging?page={page}&amp;pageSize={pageSize}&amp;filter={filter}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+              <td class="api-name">
+                <a href="#">GET api/v1/customers/getbyUserId?page={page}&amp;pageSize={pageSize}&amp;filter={filter}</a>
+              </td>
+              <td class="api-documentation">
+                <p>Header: (Authorization) .</p>
+              </td>
+            </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/customers/detail/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">POST api/v1/customers/add</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+              <p>Require: Body(company_name, address). Body Add key: customer_id</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">PUT api/v1/customers/update/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+              <p>Require: Body(name, customer_id). Body Add key: customer_id</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">DELETE api/v1/customers/delete/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+      <h2 id="AppCampaign">AppCampaign</h2>
+      <table class="help-page-table">
+        <thead>
+          <tr>
+            <th>API</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/campaigns</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/campaigns/paging?page={page}&amp;pageSize={pageSize}&amp;filter={filter}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/campaigns/pagingCustomer?page={page}&amp;pageSize={pageSize}&amp;filter={filter}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/campaigns/detail/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">POST api/v1/campaigns/add</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+              <p>Require: Body(name, customer_id). </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">PUT api/v1/campaigns/update/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+              <p>Require: Body(name, customer_id). </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">DELETE api/v1/campaigns/delete/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+      <h2 id="AppCustomer">AppDriver</h2>
+      <table class="help-page-table">
+        <thead>
+          <tr>
+            <th>API</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/drivers</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/drivers/paging?page={page}&amp;pageSize={pageSize}&amp;phone={phone}&amp;fullname={fullname}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/drivers/detail/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">POST api/v1/drivers/add</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+              <p>Require: Body(full_name). Body Add key: phone, birth_day(dd/mm/yyyy)</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">PUT api/v1/drivers/update/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+              <p>Require: Body(full_name). Body Add key: phone, birth_day(dd/mm/yyyy)</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">DELETE api/v1/drivers/delete/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+      <h2 id="AppCustomer">AppCarGroup</h2>
+      <table class="help-page-table">
+        <thead>
+          <tr>
+            <th>API</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/cargroups</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/cargroups/paging?page={page}&amp;pageSize={pageSize}&amp;fullname={fullname}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">GET api/v1/cargroups/detail/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">POST api/v1/cargroups/add</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+              <p>Require: Body(full_name)</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">PUT api/v1/cargroups/update/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+              <p>Require: Body(full_name)</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="api-name">
+              <a href="#">DELETE api/v1/cargroups/delete/{id}</a>
+            </td>
+            <td class="api-documentation">
+              <p>Header: (Authorization) .</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+
+</html>
