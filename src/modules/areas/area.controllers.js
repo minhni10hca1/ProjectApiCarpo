@@ -196,6 +196,7 @@ export async function getCombo(req, res) {
     } else {
       return res.status(HTTPStatus.OK).json(area);
     }
+    console.log("area"+ area);
   } catch (err) {
     appData['success'] = successCode.success0;
     appData['data'] = 'Có lỗi trong khi nhận dữ liệu ' + err;

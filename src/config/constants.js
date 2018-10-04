@@ -1,12 +1,12 @@
 const devConfig = {
-  MONGO_URL: 'mongodb://minhni:minhni123@45.119.81.181:27017/carpo_test', //sử dụng dev local ted-laptop
+  MONGO_URL: 'mongodb://minhni:minhni123@103.27.237.20:27017/carpo_test', //sử dụng dev local ted-laptop
   // MONGO_URL: 'mongodb://minhni:minhni123@45.119.81.181:27017/carpo-dev',
   // 'url': 'mongodb://ted:784673@ds123456.mlab.com:49466/mongodbroles',
   JWT_SECRET: 'thisisasecret',
 };
 
 const testConfig = {
-  MONGO_URL: 'mongodb://minhni:minhni123@45.119.81.181:27017/carpo',
+  MONGO_URL: 'mongodb://minhni:minhni123@103.27.237.20:27017/carpo',
   JWT_SECRET: 'thisisasecret123',
   // MONGO_URL: 'mongodb://minhni:minhni123@45.119.81.181:27017/carpo-test',
 };

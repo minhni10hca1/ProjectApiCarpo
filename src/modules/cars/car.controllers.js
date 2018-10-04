@@ -278,6 +278,7 @@ export async function getListCarByCustomerID_Evidence(req, res) {
           path: 'user_id',
           select: 'fullname phone',
         });
+        console.log("list car:" + cars );
       appData['success'] = successCode.success1;
       appData['data'] = cars;
       appData['status'] = HTTPStatus.OK;
