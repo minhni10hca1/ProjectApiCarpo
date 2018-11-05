@@ -760,6 +760,47 @@ exports.getComboCarByCustomerID = async (req, res) => {
 };
 /** End Tìm theo id*/
 
+/** Lấy danh sách tất cả xe đang chạy cho 1 khách hàng combobox xe */
+exports.getComboCarByCampaignID = async (req, res) => {
+  let appData = {};
+  try {
+    var campaign_id = req.params.id;
+    console.log("campaign_id"+ campaign_id);
+    var criteria = {};
+    criteria._id = mongoose.Types.ObjectId(campaign_id);
+    let campaign = await Campaign.find(criteria).select({ 'cars': 1 })
+      .populate({
+        path: 'cars',
+        select: { 'device_id': 1, 'license_plate': 1, '_id': 1, 'user_id': 1 },
+        populate: {
+          path: 'user_id',
+          select: 'fullname phone',
+        }
+      });
+    if (!campaign) {
+      appData['success'] = successCode.success0;
+      appData['data'] = 'Không tìm thấy dữ liệu';
+      appData['status'] = HTTPStatus.NOT_FOUND;
+      res.status(HTTPStatus.NOT_FOUND).json(appData);
+    } else {
+      var cars = [];
+      campaign.forEach(function (camp) {
+        camp.cars.forEach(function (r) {
+          var element = {};
+          element.value = r.device_id;
+          element.label = r.user_id.fullname + ' - ' + r.license_plate;
+          cars.push(element);
+        });
+      });
+      res.status(HTTPStatus.OK).json(cars);
+     // console.log("cars"+ cars);
+    }
+  } catch (err) {
+    res.status(HTTPStatus.INTERNAL_SERVER_ERROR).json('Có lỗi trong khi nhận dữ liệu ' + err);
+  }
+};
+/** End Tìm theo id*/
+
 
 
 /** Lấy danh sách tất cả xe đang chạy cho 1 khách hàng */

@@ -27,6 +27,7 @@ routes.delete('/updateDeleteCar/:campaignid/:carid', authJwt, AuthRole.roleAutho
 routes.get('/findOneByDeviceId', authJwt, AuthRole.roleAuthorization(security.ROLE_MANAGER), campaignController.findByDeviceId); //tìm kiếm hợp đồng theo device_id xe
 routes.get('/findCustomerID', authJwt, campaignController.findAllByCustomerID); //lấy hợp đồng theo user đăng nhập là kh
 routes.get('/getComboCarByCustomerID', authJwt, campaignController.getComboCarByCustomerID); //lấy ds tài xế theo kh combobox
+routes.get('/getComboCarByCampaignID/:id', authJwt, campaignController.getComboCarByCampaignID); //lấy ds tài xế theo campaign
 routes.get('/getListCarByCustomerID', authJwt, campaignController.getListCarByCustomerID); //lấy ds tài xế theo kh
 routes.get('/selectedItems/:id', authJwt, AuthRole.roleAuthorization(security.ROLE_MANAGER), campaignController.findAllCarByCampaignID); //ds xe theo hợp đồng dualist
 routes.get('/getComboByUserID', authJwt, campaignController.getComboByUserId); //getcombo hợp đồng theo user đăng nhập
